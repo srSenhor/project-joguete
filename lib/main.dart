@@ -7,7 +7,10 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Flame.device.fullScreen();
   Flame.device.setLandscape();
-
-  Joguete game = Joguete();
-  runApp(GameWidget(game: game));
+  runApp(GameWidget(
+    game: Joguete(),
+    loadingBuilder: (context) {
+      return const Text('Loading...');
+    },
+  ));
 }
