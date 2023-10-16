@@ -1,16 +1,17 @@
-# projeto_joguete
+# Projetinho de Joguete Bacanudo 😎👌
 
-A new Flutter project.
+É um projeto que fecha a 3ª unidade de Programação para Dispositivos Móveis utilizando Flame do Flutter. Se trata de um *endless runner*, similar ao jogo do dino da Google, que roda quando o dispositivo está sem conexão com a internet, disponível em [Links úteis](#links-uteis).
 
-## Getting Started
+Feito sem muita pretenção, com mais ênfase em exercitar e experimentar um *game toolkit* pela primeira vez.
 
-This project is a starting point for a Flutter application.
+## Tecnologias utilizadas
 
-A few resources to get you started if this is your first Flutter project:
+Nesse Projeto foi utilizado:
+- Flame
+- Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Links Úteis
+- Assets
+  - [Cozy Desert by Matjanna](https://matjanna.itch.io/desert-background)
+  - [Pixel Adventure by Pixel Frog](https://pixelfrog-assets.itch.io/pixel-adventure-1)
+- [Jogo do dino (disponível apenas para o Google Chrome)](chrome://dino)
