@@ -14,4 +14,4 @@ Nesse Projeto foi utilizado:
 - Assets
   - [Cozy Desert by Matjanna](https://matjanna.itch.io/desert-background)
   - [Pixel Adventure by Pixel Frog](https://pixelfrog-assets.itch.io/pixel-adventure-1)
-- [Jogo do dino (disponível apenas para o Google Chrome)](chrome://dino)
+- [Jogo do dino \(disponível apenas para o Google Chrome\)](chrome://dino)
