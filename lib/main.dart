@@ -5,7 +5,7 @@ import 'package:projeto_joguete/joguete.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Flame.device.fullScreen();
+  //Flame.device.fullScreen();
   Flame.device.setLandscape();
 
   Joguete game = Joguete();

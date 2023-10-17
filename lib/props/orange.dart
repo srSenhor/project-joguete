@@ -20,9 +20,9 @@ class Orange extends SpriteAnimationComponent
   @override
   FutureOr<void> onLoad() async {
     //TODO: dar um jeito melhor de fazer spawnar próximo ao chão
-    //staticHeightFruit = size.y;
-    staticHeightFruit = 600;
-    position = Vector2(gameRef.size.x / 2, gameRef.size.y - staticHeightFruit);
+    staticHeightFruit = gameRef.size.y - size.y - 96;
+
+    position = Vector2(gameRef.size.x / 2, staticHeightFruit);
     size = Vector2(32.0, 32.0);
     anchor = Anchor.bottomCenter;
     scale = Vector2(2, 2);
@@ -32,7 +32,7 @@ class Orange extends SpriteAnimationComponent
         srcSize: Vector2.all(32.0));
 
     idleAnimation =
-        idleSpriteSheet.createAnimation(row: 0, stepTime: 0.2, to: 8);
+        idleSpriteSheet.createAnimation(row: 0, stepTime: 0.13, to: 17);
 
     animation = idleAnimation;
 
@@ -56,7 +56,7 @@ class Orange extends SpriteAnimationComponent
     super.update(dt);
 
     position.x += vx * dt;
-    position.y = staticHeightFruit + 15 * cos(position.x / 40);
+    position.y = staticHeightFruit + 16 * cos(position.x / 40);
 
     if (position.x < 0) {
       position.x = gameRef.size.x;

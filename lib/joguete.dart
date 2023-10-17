@@ -10,6 +10,11 @@ import 'package:projeto_joguete/props/spike_trap.dart';
 import 'package:projeto_joguete/props/start.dart';
 
 class Joguete extends FlameGame {
+  Joguete() {
+    size:
+    Vector2(720, 1080);
+  }
+
   late SpikeTrap _spike;
   late Character _person;
   late Start _start;

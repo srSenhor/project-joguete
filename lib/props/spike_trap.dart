@@ -14,7 +14,7 @@ class SpikeTrap extends SpriteComponent
   FutureOr<void> onLoad() async {
     vx = 200;
     sprite = await gameRef.loadSprite('Traps/spikes.png');
-    position = Vector2(gameRef.size.x / 2, gameRef.size.y - 42);
+    position = Vector2(gameRef.size.x / 2, gameRef.size.y - size.y - 32);
     size = Vector2.all(16.0);
     anchor = Anchor.bottomRight;
     scale = Vector2(3, 3);
@@ -31,5 +31,7 @@ class SpikeTrap extends SpriteComponent
     if (position.x < 0) {
       position.x = gameRef.size.x + 200;
     }
+
+    position.y = gameRef.size.y - size.y - 32;
   }
 }
