@@ -12,7 +12,7 @@ class Character extends SpriteAnimationComponent
         CollisionCallbacks {
   double vx = 0;
   double vy = 0;
-  double ax = 50;
+  double ax = 0;
   double ay = 0;
   bool gameOver = false;
   late SpriteSheet idleSpriteSheet, hitSpriteSheet;
@@ -20,7 +20,7 @@ class Character extends SpriteAnimationComponent
 
   @override
   void onLoad() async {
-    position = gameRef.size / 2;
+    position = Vector2(48, 340);
     size = Vector2(64.0, 64.0);
     anchor = Anchor.center;
     idleSpriteSheet = SpriteSheet(
@@ -41,7 +41,7 @@ class Character extends SpriteAnimationComponent
 
   @override
   void onTapUp(TapUpEvent event) async {
-    scale = Vector2(1, -2);
+    jump();
     animation = hitAnimation;
   }
 
