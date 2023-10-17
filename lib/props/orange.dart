@@ -43,7 +43,7 @@ class Orange extends SpriteAnimationComponent
   void onCollision(Set<Vector2> points, PositionComponent other) {
     super.onCollision(points, other);
 
-    if (other is Person) {
+    if (other is Character) {
       gameRef.text_c.text =
           'Score: ${(gameRef.score.floor() + 10).toString()} + 10';
       gameRef.score += 10;

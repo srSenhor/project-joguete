@@ -11,7 +11,7 @@ import 'package:projeto_joguete/props/start.dart';
 
 class Joguete extends FlameGame {
   late SpikeTrap _spike;
-  late Person _person;
+  late Character _person;
   late Start _start;
   late Orange _orange;
 
@@ -59,7 +59,7 @@ class Joguete extends FlameGame {
 
     add(text_c);
 
-    _person = Person();
+    _person = Character();
     add(_person);
 
     /*
