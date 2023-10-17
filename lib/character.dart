@@ -12,8 +12,8 @@ class Character extends SpriteAnimationComponent
         CollisionCallbacks {
   double vx = 0;
   double vy = 0;
-  double ax = 0;
-  double ay = 300;
+  double ax = 50;
+  double ay = 0;
   bool gameOver = false;
   late SpriteSheet idleSpriteSheet, hitSpriteSheet;
   late SpriteAnimation idleAnimation, hitAnimation;
