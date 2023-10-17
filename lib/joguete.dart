@@ -4,13 +4,14 @@ import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/parallax.dart';
 import 'package:flutter/material.dart';
+import 'package:projeto_joguete/character.dart';
 import 'package:projeto_joguete/props/orange.dart';
+import 'package:projeto_joguete/props/spike_trap.dart';
 import 'package:projeto_joguete/props/start.dart';
 
 class Joguete extends FlameGame {
-  /*
-  late Spike _spike;
-  */
+  late SpikeTrap _spike;
+  late Person _person;
   late Start _start;
   late Orange _orange;
 
@@ -58,9 +59,17 @@ class Joguete extends FlameGame {
 
     add(text_c);
 
+    _person = Person();
+    add(_person);
+
+    /*
     //TODO: dar um jeito desse componente aparecer uma vez só, de maneira física quando o jogo inicia
     _start = Start();
     add(_start);
+    */
+
+    _spike = SpikeTrap();
+    add(_spike);
 
     _orange = Orange();
     add(_orange);

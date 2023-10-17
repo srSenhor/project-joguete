@@ -44,6 +44,8 @@ class Orange extends SpriteAnimationComponent
     super.onCollision(points, other);
 
     if (other is Person) {
+      gameRef.text_c.text =
+          'Score: ${(gameRef.score.floor() + 10).toString()} + 10';
       gameRef.score += 10;
       removeFromParent();
     }
