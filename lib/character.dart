@@ -28,7 +28,7 @@ class Character extends SpriteAnimationComponent
       srcSize: Vector2.all(32.0),
     );
     hitSpriteSheet = SpriteSheet(
-      image: await gameRef.images.load('Hit'),
+      image: await gameRef.images.load('Hit.png'),
       srcSize: Vector2.all(32.0),
     );
     idleAnimation = idleSpriteSheet.createAnimation(
