@@ -11,8 +11,8 @@ import 'package:projeto_joguete/joguete.dart';
 class Orange extends SpriteAnimationComponent
     with HasGameRef<Joguete>, CollisionCallbacks {
   Orange() {
-    debugColor = Colors.white;
-    debugMode = true;
+    // debugColor = Colors.white;
+    // debugMode = true;
   }
   double vx = -100.0;
   double vy = 0.0;

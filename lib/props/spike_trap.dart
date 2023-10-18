@@ -9,8 +9,8 @@ import 'package:projeto_joguete/joguete.dart';
 class SpikeTrap extends SpriteComponent
     with HasGameRef<Joguete>, CollisionCallbacks {
   SpikeTrap() {
-    debugMode = true;
-    debugColor = Colors.cyan;
+    // debugMode = true;
+    // debugColor = Colors.cyan;
   }
   late double angVelocity;
   late double vx;
