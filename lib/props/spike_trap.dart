@@ -10,7 +10,7 @@ class SpikeTrap extends SpriteComponent
     with HasGameRef<Joguete>, CollisionCallbacks {
   SpikeTrap() {
     debugMode = true;
-    debugColor = Colors.cyan;
+    //debugColor = Colors.cyan;
   }
   late double angVelocity;
   late double vx;

@@ -5,6 +5,7 @@ import 'package:flame/game.dart';
 import 'package:flame/parallax.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_joguete/character.dart';
+import 'package:projeto_joguete/props/Bananas.dart';
 import 'package:projeto_joguete/props/orange.dart';
 import 'package:projeto_joguete/props/spike_trap.dart';
 import 'package:flame_audio/flame_audio.dart';
@@ -20,6 +21,7 @@ class Joguete extends FlameGame with HasCollisionDetection {
   late Character _person;
   //late Start _start;
   late Orange _orange;
+  late Bananas _bananas;
 
   final scoreStyle = TextPaint(
       style: const TextStyle(
@@ -72,6 +74,7 @@ class Joguete extends FlameGame with HasCollisionDetection {
     _spike = SpikeTrap();
     add(_spike);
 
+    _bananas = Bananas();
     _orange = Orange();
     add(_orange);
     //_orange.orangeExists = true;
@@ -95,13 +98,16 @@ class Joguete extends FlameGame with HasCollisionDetection {
     } else {
       text_c.text = 'Score: ${score.floor().toString()}';
       score += vel_score * dt;
-      /* //A lógica tá errada de alguma forma
-      if (!_orange.orangeExists) {
+      //A lógica tá errada de alguma forma
+      if (!_orange.exists) {
         _orange.removeFromParent();
-        _orange.orangeExists = true;
+        _bananas.exists = true;
+        add(_bananas);
+      } else if (!_bananas.exists) {
+        _bananas.removeFromParent();
+        _orange.exists = true;
         add(_orange);
       }
-    */
     }
   }
 }

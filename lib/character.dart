@@ -10,7 +10,7 @@ class Character extends SpriteAnimationComponent
     with TapCallbacks, HasGameRef<Joguete>, CollisionCallbacks {
   Character() {
     debugColor = Colors.limeAccent;
-    debugMode = true;
+    //debugMode = true;
   }
 
   double vx = 0;

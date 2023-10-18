@@ -8,11 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:projeto_joguete/character.dart';
 import 'package:projeto_joguete/joguete.dart';
 
-class Orange extends SpriteAnimationComponent
+class Bananas extends SpriteAnimationComponent
     with HasGameRef<Joguete>, CollisionCallbacks {
-  Orange() {
-    //debugColor = Colors.white;
-    debugMode = true;
+  Bananas() {
+    debugColor = Colors.white;
+    //debugMode = true;
   }
   double vx = -100.0;
   double vy = 0.0;
@@ -34,7 +34,7 @@ class Orange extends SpriteAnimationComponent
     scale = Vector2(2, 2);
 
     idleSpriteSheet = SpriteSheet(
-        image: await gameRef.images.load('Props/orange.png'),
+        image: await gameRef.images.load('Props/bananas.png'),
         srcSize: Vector2.all(32.0));
 
     idleAnimation =
@@ -42,8 +42,10 @@ class Orange extends SpriteAnimationComponent
 
     animation = idleAnimation;
 
-    add(CircleHitbox(
-        collisionType: CollisionType.passive, isSolid: true, radius: 16.0));
+    add(RectangleHitbox(
+        collisionType: CollisionType.passive,
+        isSolid: true,
+        size: Vector2.all(16.0)));
 
     return super.onLoad();
   }
@@ -54,8 +56,8 @@ class Orange extends SpriteAnimationComponent
 
     if (other is Character) {
       gameRef.text_c.text =
-          'Score: ${(gameRef.score.floor() + 10).toString()} + 100';
-      gameRef.score += 100;
+          'Score: ${(gameRef.score.floor() + 10).toString()} + 200';
+      gameRef.score += 200;
       removeFromParent();
       exists = false;
     }
