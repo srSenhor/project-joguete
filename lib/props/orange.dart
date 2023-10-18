@@ -16,6 +16,7 @@ class Orange extends SpriteAnimationComponent
   }
   double vx = -100.0;
   double vy = 0.0;
+  //bool orangeExists = false;
 
   late final staticHeightFruit;
 
@@ -42,7 +43,7 @@ class Orange extends SpriteAnimationComponent
     animation = idleAnimation;
 
     add(CircleHitbox(
-        collisionType: CollisionType.active, isSolid: true, radius: 16.0));
+        collisionType: CollisionType.passive, isSolid: true, radius: 16.0));
 
     return super.onLoad();
   }
@@ -56,6 +57,7 @@ class Orange extends SpriteAnimationComponent
           'Score: ${(gameRef.score.floor() + 10).toString()} + 100';
       gameRef.score += 100;
       removeFromParent();
+      //orangeExists = false;
     }
   }
 

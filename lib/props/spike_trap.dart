@@ -10,6 +10,7 @@ class SpikeTrap extends SpriteComponent
     with HasGameRef<Joguete>, CollisionCallbacks {
   SpikeTrap() {
     debugMode = true;
+    debugColor = Colors.cyan;
   }
   late double angVelocity;
   late double vx;
@@ -21,11 +22,11 @@ class SpikeTrap extends SpriteComponent
     anchor = Anchor.bottomRight;
     position = Vector2(gameRef.size.x / 2, gameRef.size.y - size.y - 32);
     size = Vector2.all(16.0);
-    scale = Vector2(3, 3);
+    scale = Vector2(1, 1);
 
     add(RectangleHitbox(
         collisionType: CollisionType.passive,
-        size: Vector2(16.0, 8.0),
+        size: Vector2(16.0, 16.0),
         isSolid: true));
 
     return super.onLoad();

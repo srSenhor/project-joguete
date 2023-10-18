@@ -73,6 +73,7 @@ class Joguete extends FlameGame with HasCollisionDetection {
 
     _orange = Orange();
     add(_orange);
+    //_orange.orangeExists = true;
 
     _person = Character();
     add(_person);
@@ -93,6 +94,13 @@ class Joguete extends FlameGame with HasCollisionDetection {
     } else {
       text_c.text = 'Score: ${score.floor().toString()}';
       score += vel_score * dt;
+      /* //A lógica tá errada de alguma forma
+      if (!_orange.orangeExists) {
+        _orange.removeFromParent();
+        _orange.orangeExists = true;
+        add(_orange);
+      }
+    */
     }
   }
 }
