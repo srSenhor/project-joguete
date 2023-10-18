@@ -53,8 +53,8 @@ class Orange extends SpriteAnimationComponent
 
     if (other is Character) {
       gameRef.text_c.text =
-          'Score: ${(gameRef.score.floor() + 10).toString()} + 10';
-      gameRef.score += 10;
+          'Score: ${(gameRef.score.floor() + 10).toString()} + 100';
+      gameRef.score += 100;
       removeFromParent();
     }
   }

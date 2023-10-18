@@ -24,8 +24,8 @@ class SpikeTrap extends SpriteComponent
     scale = Vector2(3, 3);
 
     add(RectangleHitbox(
-        collisionType: CollisionType.active,
-        size: Vector2.all(16.0),
+        collisionType: CollisionType.passive,
+        size: Vector2(16.0, 8.0),
         isSolid: true));
 
     return super.onLoad();

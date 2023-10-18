@@ -12,6 +12,7 @@ class Character extends SpriteAnimationComponent
     debugColor = Colors.limeAccent;
     debugMode = true;
   }
+
   double vx = 0;
   double vy = 0;
   double ax = 0;

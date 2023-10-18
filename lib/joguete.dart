@@ -86,7 +86,13 @@ class Joguete extends FlameGame with HasCollisionDetection {
   void update(double dt) {
     super.update(dt);
 
-    text_c.text = 'Score: ${score.floor().toString()}';
-    score += vel_score * dt;
+    if (_person.gameOver == true) {
+      text_c.text = 'Game Over\nScore total: ${score.floor().toString()}';
+      _spike.vx = _spike.angVelocity = 0;
+      _orange.vx = 0;
+    } else {
+      text_c.text = 'Score: ${score.floor().toString()}';
+      score += vel_score * dt;
+    }
   }
 }
