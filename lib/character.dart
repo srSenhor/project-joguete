@@ -14,7 +14,7 @@ class Character extends SpriteAnimationComponent
   double vx = 0;
   double vy = 0;
   double ax = 0;
-  double ay = 9.8;
+  double ay = 30;
   bool gameOver = false;
   /*
   late SpriteSheet runSpriteSheet, jumpSpriteSheet, fallSpriteSheet;
@@ -79,7 +79,7 @@ class Character extends SpriteAnimationComponent
   // }
 
   void jump() {
-    vy = -30;
+    vy = -60;
   }
 
   /*
