@@ -5,7 +5,7 @@ import 'package:flame/game.dart';
 import 'package:flame/parallax.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_joguete/character.dart';
-import 'package:projeto_joguete/props/Bananas.dart';
+import 'package:projeto_joguete/props/bananas.dart';
 import 'package:projeto_joguete/props/orange.dart';
 import 'package:projeto_joguete/props/spike_trap.dart';
 import 'package:flame_audio/flame_audio.dart';
