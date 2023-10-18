@@ -9,5 +9,10 @@ void main() {
   Flame.device.setLandscape();
 
   Joguete game = Joguete();
-  runApp(GameWidget(game: game));
+  runApp(GameWidget(
+    game: game,
+    loadingBuilder: (context) {
+      return const Center(child: Text("LOADING..."));
+    },
+  ));
 }

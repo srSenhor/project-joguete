@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:projeto_joguete/character.dart';
 import 'package:projeto_joguete/props/orange.dart';
 import 'package:projeto_joguete/props/spike_trap.dart';
-import 'package:projeto_joguete/props/start.dart';
+//import 'package:projeto_joguete/props/start.dart';
 
-class Joguete extends FlameGame {
+class Joguete extends FlameGame with HasCollisionDetection {
   Joguete() {
     size:
     Vector2(720, 1080);
@@ -17,7 +17,7 @@ class Joguete extends FlameGame {
 
   late SpikeTrap _spike;
   late Character _person;
-  late Start _start;
+  //late Start _start;
   late Orange _orange;
 
   final scoreStyle = TextPaint(
@@ -62,11 +62,6 @@ class Joguete extends FlameGame {
         anchor: Anchor.topLeft,
         position: Vector2.all(20.0));
 
-    add(text_c);
-
-    _person = Character();
-    add(_person);
-
     /*
     //TODO: dar um jeito desse componente aparecer uma vez só, de maneira física quando o jogo inicia
     _start = Start();
@@ -78,6 +73,11 @@ class Joguete extends FlameGame {
 
     _orange = Orange();
     add(_orange);
+
+    _person = Character();
+    add(_person);
+
+    add(text_c);
 
     return super.onLoad();
   }

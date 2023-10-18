@@ -36,6 +36,8 @@ class Orange extends SpriteAnimationComponent
 
     animation = idleAnimation;
 
+    add(CircleHitbox());
+
     return super.onLoad();
   }
 
