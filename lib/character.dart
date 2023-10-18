@@ -15,7 +15,7 @@ class Character extends SpriteAnimationComponent
   double vx = 0;
   double vy = 0;
   double ax = 0;
-  double ay = 30;
+  double ay = 40;
   bool gameOver = false;
   /*
   late SpriteSheet runSpriteSheet, jumpSpriteSheet, fallSpriteSheet;
@@ -84,7 +84,7 @@ class Character extends SpriteAnimationComponent
   // }
 
   void jump() {
-    vy = -60;
+    vy = -180;
   }
 
   @override
@@ -103,27 +103,13 @@ class Character extends SpriteAnimationComponent
   void update(double dt) {
     super.update(dt);
     // Adicione a gravidade
-    vy += ay * dt; // Ajuste conforme necessário para a intensidade da gravidade
-
+    vy += 12; // Ajuste conforme necessário para a intensidade da gravidade
     // Atualize a posição de acordo com a velocidade vertical
     position.y += vy * dt;
-
     // Verifique se o personagem caiu abaixo da posição inicial e o reposicione
     if (position.y > (gameRef.size.y - size.y - 16)) {
       position.y = (gameRef.size.y - size.y - 16);
       vy = 0; // Reset da velocidade vertical
     }
-
-    // // vy += ay * dt;
-    // vy = 0;
-    // if (position.y - 40 >= gameRef.size.y) {
-    //   ay = 0;
-    //   vy = 0;
-    //   gameOver = true;
-    //   removeFromParent();
-    // }
-    // // position.x += vx * dt;
-    // // position.y += vy * dt;
-    // position = Vector2(48, gameRef.size.y - size.y - 10);
   }
 }
