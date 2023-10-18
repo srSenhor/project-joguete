@@ -2,15 +2,16 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/sprite.dart';
+import 'package:flutter/material.dart';
 import 'package:projeto_joguete/props/spike_trap.dart';
 import 'joguete.dart';
 
 class Character extends SpriteAnimationComponent
-    with
-        TapCallbacks,
-        HasGameRef<Joguete>,
-        HasCollisionDetection,
-        CollisionCallbacks {
+    with TapCallbacks, HasGameRef<Joguete>, CollisionCallbacks {
+  Character() {
+    debugColor = Colors.limeAccent;
+    debugMode = true;
+  }
   double vx = 0;
   double vy = 0;
   double ax = 0;
@@ -61,6 +62,10 @@ class Character extends SpriteAnimationComponent
     hitAnimation = hitSpriteSheet.createAnimation(
         row: 0, stepTime: 0.2, from: 0, to: 10, loop: true);
     animation = idleAnimation;
+    add(RectangleHitbox(
+        collisionType: CollisionType.active,
+        size: Vector2.all(64.0),
+        isSolid: true));
     super.onLoad();
   }
 
@@ -82,7 +87,6 @@ class Character extends SpriteAnimationComponent
     vy = -60;
   }
 
-  /*
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
@@ -94,7 +98,7 @@ class Character extends SpriteAnimationComponent
       removeFromParent();
     }
   }
-  */
+
   @override
   void update(double dt) {
     super.update(dt);

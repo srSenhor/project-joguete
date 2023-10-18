@@ -3,10 +3,14 @@ import 'dart:math';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter/material.dart';
 import 'package:projeto_joguete/joguete.dart';
 
 class SpikeTrap extends SpriteComponent
-    with HasGameRef<Joguete>, HasCollisionDetection, CollisionCallbacks {
+    with HasGameRef<Joguete>, CollisionCallbacks {
+  SpikeTrap() {
+    debugMode = true;
+  }
   late double angVelocity;
   late double vx;
 
@@ -19,7 +23,10 @@ class SpikeTrap extends SpriteComponent
     size = Vector2.all(16.0);
     scale = Vector2(3, 3);
 
-    add(RectangleHitbox());
+    add(RectangleHitbox(
+        collisionType: CollisionType.active,
+        size: Vector2.all(16.0),
+        isSolid: true));
 
     return super.onLoad();
   }

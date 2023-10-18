@@ -4,11 +4,16 @@ import 'dart:math';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/sprite.dart';
+import 'package:flutter/material.dart';
 import 'package:projeto_joguete/character.dart';
 import 'package:projeto_joguete/joguete.dart';
 
 class Orange extends SpriteAnimationComponent
-    with HasGameRef<Joguete>, HasCollisionDetection, CollisionCallbacks {
+    with HasGameRef<Joguete>, CollisionCallbacks {
+  Orange() {
+    debugColor = Colors.white;
+    debugMode = true;
+  }
   double vx = -100.0;
   double vy = 0.0;
 
@@ -36,7 +41,8 @@ class Orange extends SpriteAnimationComponent
 
     animation = idleAnimation;
 
-    add(CircleHitbox());
+    add(CircleHitbox(
+        collisionType: CollisionType.active, isSolid: true, radius: 16.0));
 
     return super.onLoad();
   }
