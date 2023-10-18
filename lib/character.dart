@@ -14,7 +14,7 @@ class Character extends SpriteAnimationComponent
   double vx = 0;
   double vy = 0;
   double ax = 0;
-  double ay = 0;
+  double ay = 9.8;
   bool gameOver = false;
   /*
   late SpriteSheet runSpriteSheet, jumpSpriteSheet, fallSpriteSheet;
@@ -67,18 +67,19 @@ class Character extends SpriteAnimationComponent
   @override
   void onTapUp(TapUpEvent event) async {
     jump();
-    animation = hitAnimation;
+    // animation = hitAnimation;
     //animation = jumpAnimation;
   }
 
-  @override
-  void onTapDown(TapDownEvent event) {
-    super.onTapDown(event);
-    scale = Vector2(1.5, 1.5);
-  }
+  // @override
+  // void onTapDown(TapDownEvent event) {
+  //   super.onTapDown(event);
+  //   // scale = Vector2(1.5, 1.5);
+  //   jump();
+  // }
 
   void jump() {
-    vy = -200;
+    vy = -30;
   }
 
   /*
@@ -97,14 +98,28 @@ class Character extends SpriteAnimationComponent
   @override
   void update(double dt) {
     super.update(dt);
-    vy += ay * dt;
-    if (position.y - 40 >= gameRef.size.y) {
-      ay = 0;
-      vy = 0;
-      gameOver = true;
-      removeFromParent();
-    }
-    position.x += vx * dt;
+    // Adicione a gravidade
+    vy += ay * dt; // Ajuste conforme necessário para a intensidade da gravidade
+
+    // Atualize a posição de acordo com a velocidade vertical
     position.y += vy * dt;
+
+    // Verifique se o personagem caiu abaixo da posição inicial e o reposicione
+    if (position.y > (gameRef.size.y - size.y - 16)) {
+      position.y = (gameRef.size.y - size.y - 16);
+      vy = 0; // Reset da velocidade vertical
+    }
+
+    // // vy += ay * dt;
+    // vy = 0;
+    // if (position.y - 40 >= gameRef.size.y) {
+    //   ay = 0;
+    //   vy = 0;
+    //   gameOver = true;
+    //   removeFromParent();
+    // }
+    // // position.x += vx * dt;
+    // // position.y += vy * dt;
+    // position = Vector2(48, gameRef.size.y - size.y - 10);
   }
 }
