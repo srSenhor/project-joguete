@@ -51,7 +51,7 @@ class Character extends SpriteAnimationComponent
     animation = runAnimation;
     */
     idleSpriteSheet = SpriteSheet(
-      image: await gameRef.images.load('Idle.png'),
+      image: await gameRef.images.load('Run.png'),
       srcSize: Vector2.all(32.0),
     );
     hitSpriteSheet = SpriteSheet(
