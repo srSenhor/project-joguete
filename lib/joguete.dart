@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto_joguete/character.dart';
 import 'package:projeto_joguete/props/orange.dart';
 import 'package:projeto_joguete/props/spike_trap.dart';
+import 'package:flame_audio/flame_audio.dart';
 //import 'package:projeto_joguete/props/start.dart';
 
 class Joguete extends FlameGame with HasCollisionDetection {
@@ -53,7 +54,7 @@ class Joguete extends FlameGame with HasCollisionDetection {
       await Future.wait(layers),
       baseVelocity: Vector2(50.0, 0),
     ));
-
+    await FlameAudio.bgm.play('bg.mp3');
     add(parallaxComp);
 
     text_c = TextComponent(
